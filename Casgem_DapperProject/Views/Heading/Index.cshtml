@@ -1,0 +1,60 @@
+﻿@model List<Headings>
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+
+<br />
+
+<div class="container"> 
+
+    <a class="btn btn-success" href="/Heading/AddHeading/">Ekle</a>
+    <hr />
+    <table class="table table-striped">
+
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Durum</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        @{
+            int a = 1;
+        }
+        @foreach (var i in Model)
+        {
+            <tr>
+                <th>@a</th>
+                <th>@i.HeadingName</th>
+                <th>
+                    @if (i.HeadingStatus == true)
+                    {
+                        <span class="text-success">Aktif</span>
+
+                    }
+                    else
+                    {
+                        <span class="text-danger">Pasif</span>
+
+                    }
+                </th>
+                <th>
+                    <a class="btn btn-danger" href="/Heading/DeleteHeading/@i.HeadingId">Sil</a>
+                </th>
+                <th>
+                    <a class="btn btn-warning" href="/Heading/UpdateHeading/@i.HeadingId">Güncelle</a>
+                </th>
+            </tr>
+
+            a++;
+
+        }
+    </table>
+
+
+</div>

@@ -1,0 +1,54 @@
+﻿@model Headings
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<div class="container">
+
+    <form method="post">
+
+        <input type="hidden" class="form-control" asp-for="HeadingId" />
+
+
+
+        <div class="mb-3">
+            <label>Adı</label>
+            <input type="text" class="form-control" asp-for="HeadingName" />
+
+        </div>
+
+        <div class="mb-3">
+            <label>Durumu</label>
+           
+            @if (Model.HeadingStatus==true)
+            {
+                <input type="radio" name="HeadingStatus" value="True" checked/> <span>Aktif</span>
+                <input type="radio" name="HeadingStatus" value="False" /> <span>Pasif</span>
+
+            }
+            else
+            {
+                <input type="radio" name="HeadingStatus" value="True" /> <span>Aktif</span>
+                <input type="radio" checked name="HeadingStatus" value="False" /> <span>Pasif</span>
+
+
+
+            }
+
+        </div>
+
+
+        <div class="mb-3">
+            <a href="/Heading/Index/" class="btn btn-danger">İptal</a>
+
+            <input type="submit" class="btn btn-warning" value="Güncelle" />
+
+        </div>
+
+    </form>
+
+</div>

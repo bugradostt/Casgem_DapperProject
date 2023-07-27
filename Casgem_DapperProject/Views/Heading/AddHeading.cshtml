@@ -1,0 +1,31 @@
+﻿@model Headings
+
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+<div class="container"> 
+
+    <form method="post">
+
+
+        <div class="mb-3">
+            <label>Adı</label>
+            <input type="text" class="form-control" asp-for="HeadingName" />
+
+        </div>
+
+
+        <div class="mb-3">
+            <a href="/Heading/Index/" class="btn btn-danger">İptal</a>
+           
+            <input type="submit" class="btn btn-success" value="Ekle"  />
+
+        </div>
+
+    </form>
+
+</div>
